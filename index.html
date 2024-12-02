@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="x-icon" href="logomedici.png">
+    <title>Spitalul Judetean Viceroy</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Stil general */
+        * {
+            margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(283deg, #494949 45%, #1b1b1bf1 55%);
+            background-blend-mode: darken;
+            color: #333;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+        @keyframes move {
+    100% {
+        transform: translate3d(0, 0, 1px) rotate(360deg);
+    }
+}
+
+.background {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background: #272727;
+    overflow: hidden;
+    z-index: -10;
+}
+
+.background span {
+    width: 25vmin;
+    height: 25vmin;
+    border-radius: 25vmin;
+    backface-visibility: hidden;
+    position: absolute;
+    animation: move;
+    animation-duration: 25;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+.background span:nth-child(0) {
+    color: #570000;
+    top: 11%;
+    left: 31%;
+    animation-duration: 180s;
+    animation-delay: -72s;
+    transform-origin: 0vw 10vh;
+    box-shadow: 50vmin 0 7.154105920940974vmin currentColor;
+}
+.background span:nth-child(1) {
+    color: #b95555;
+    top: 76%;
+    left: 31%;
+    animation-duration: 165s;
+    animation-delay: -88s;
+    transform-origin: 22vw -19vh;
+    box-shadow: -50vmin 0 6.689239204951046vmin currentColor;
+}
+.background span:nth-child(2) {
+    color: #b95555;
+    top: 66%;
+    left: 60%;
+    animation-duration: 167s;
+    animation-delay: -187s;
+    transform-origin: 9vw 24vh;
+    box-shadow: 50vmin 0 6.878266449298566vmin currentColor;
+}
+.background span:nth-child(3) {
+    color: #b95555;
+    top: 25%;
+    left: 7%;
+    animation-duration: 73s;
+    animation-delay: -9s;
+    transform-origin: 22vw -5vh;
+    box-shadow: -50vmin 0 6.75927961425531vmin currentColor;
+}
+.background span:nth-child(4) {
+    color: #570000;
+    top: 51%;
+    left: 88%;
+    animation-duration: 247s;
+    animation-delay: -234s;
+    transform-origin: -8vw -15vh;
+    box-shadow: -50vmin 0 6.331037575221973vmin currentColor;
+}
+.background span:nth-child(5) {
+    color: #b95555;
+    top: 6%;
+    left: 2%;
+    animation-duration: 56s;
+    animation-delay: -20s;
+    transform-origin: -10vw 14vh;
+    box-shadow: -50vmin 0 6.873790511743167vmin currentColor;
+}
+.background span:nth-child(6) {
+    color: #ff0000;
+    top: 48%;
+    left: 84%;
+    animation-duration: 53s;
+    animation-delay: -37s;
+    transform-origin: 24vw 25vh;
+    box-shadow: -50vmin 0 7.049323291173059vmin currentColor;
+}
+.background span:nth-child(7) {
+    color: #ff0000;
+    top: 97%;
+    left: 42%;
+    animation-duration: 177s;
+    animation-delay: -146s;
+    transform-origin: 10vw 10vh;
+    box-shadow: 50vmin 0 6.3164289068284285vmin currentColor;
+}
+.background span:nth-child(8) {
+    color: #b95555;
+    top: 20%;
+    left: 59%;
+    animation-duration: 225s;
+    animation-delay: -74s;
+    transform-origin: -19vw 17vh;
+    box-shadow: 50vmin 0 6.505996290994772vmin currentColor;
+}
+.background span:nth-child(9) {
+    color: #b95555;
+    top: 79%;
+    left: 32%;
+    animation-duration: 240s;
+    animation-delay: -217s;
+    transform-origin: -5vw 15vh;
+    box-shadow: -50vmin 0 7.142990266985626vmin currentColor;
+}
+.background span:nth-child(10) {
+    color: #ff0000;
+    top: 46%;
+    left: 13%;
+    animation-duration: 24s;
+    animation-delay: -219s;
+    transform-origin: -23vw 14vh;
+    box-shadow: -50vmin 0 6.398732173691017vmin currentColor;
+}
+
+        header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 20px;
+    z-index: 13;
+}
+
+.logo {
+    color: white;
+    font-size: 1.7em;
+    text-decoration: none;
+    font-weight: 1000;
+    background-image: linear-gradient(rgb(255, 0, 0), rgb(255, 68, 68));
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-position: -600px 0;
+    animation: moveBackground 3s linear infinite, glowPulse 3s ease-in-out infinite;
+}
+.logo:hover {
+    text-shadow: 0 0 8px rgba(255, 68, 68, 0.8), 
+                 0 0 16px rgba(255, 68, 68, 0.6), 
+                 0 0 24px rgba(255, 0, 0, 0.9);
+    transform: scale(1.05); /* Ușoară mărire pentru un efect mai dinamic */
+}
+/* Meniul principal */
+nav.nav-menu {
+    display: flex;
+    gap: 20px;
+}
+
+nav.nav-menu a {
+    text-decoration: none;
+    text-transform: capitalize;
+    position: relative;
+    padding: 15px 10px;
+    margin-right: 40px;
+    color: #fff;
+    font-weight: 500;
+    transition: color 0.3s;
+    text-align: center; /* Asigură alinierea pe mijloc */
+}
+
+nav.nav-menu a:hover {
+    color: var(--clr);
+}
+
+nav.nav-menu a::before {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: whitesmoke;
+    transition: all 0.6s;
+}
+
+nav.nav-menu a:hover::before {
+    width: 100%;
+}
+
+/* Butonul hamburger */
+.hamburger {
+    display: none; /* Ascuns pe desktop */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 11; /* Deasupra meniului */
+}
+
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s;
+}
+
+/* Animație pentru hamburger */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Responsivitate pentru mobil */
+@media (max-width: 768px) {
+    nav.nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 60%;
+        height: 100%;
+        background: #222;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        transition: right 0.3s;
+    }
+
+    nav.nav-menu.active {
+        right: 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+    #medic {
+        display: none;
+    }
+
+}
+        /* Container */
+        .container {
+            min-height: calc(100vh - 200px);
+            max-width: 1200px;
+            margin-bottom: 100px;
+            margin: 100px auto 0;
+            padding: 20px;
+            flex: 1;
+            z-index: 10;
+        }
+
+        section {
+           padding: 30px;
+           background: rgba(128, 128, 128, 0.5); 
+           border-radius: 11px;
+           box-shadow: 0 4px 12px rgba(0, 0, 0, 0.9);
+           margin-bottom: 80px;
+           width: 100%; /* Ocupă toată lățimea containerului */
+           margin-right: 0%; /* Asigură-te că secțiunea este aliniată complet la stânga */
+       }
+
+        section h2 {
+            color: #ffffff;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            font-style: italic;
+            text-align: center;
+        }
+
+        /* Carduri servicii */
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 26px;
+            justify-content: space-around;
+        }
+
+        .service-card {
+            background: #ffffff;
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+            transition: transform 0.8s, box-shadow 0.5s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-30px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        .service-card i {
+            font-size: 2.5em;
+            color: #c42431;
+            margin-bottom: 10px;
+        }
+
+        /* Formular */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 11px;
+        }
+
+        label {
+            font-weight: bold;
+            color: white;
+        }
+
+        input, textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #851212;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ec2222;
+        }
+
+        #responseMessage {
+            margin-top: 25px;
+            color: white;
+        }
+        #responseMessageEveniment{
+            margin-top: 25px;
+            color: white;
+        }
+        .footer-content {
+    background-color: #252525; /* Fundal închis */
+    color: #ffffff; /* Text alb */
+    width: 100%; /* Asigură lățimea completă */
+    padding: 5px 20px; /* Spațiere consistentă */
+    box-sizing: border-box; /* Calcul corect al dimensiunilor */
+    text-align: center; /* Centrare text */
+    font-family: Arial, sans-serif; /* Font modern */
+    position: relative;
+    left: 0; /* Aliniere pe marginea din stânga */
+    right: 0; /* Aliniere pe marginea din dreapta */
+    margin-top: 0; /* Elimină orice margine de sus */
+    margin-bottom: -25px;
+    font-weight: 700;
+}
+
+/* Restul stilurilor rămân neschimbate */
+.footer-content .social_icon {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.footer-content .social_icon li {
+    display: inline-block;
+}
+
+.footer-content .social_icon a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 26px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: all 0.4s ease;
+    text-decoration: none;
+}
+
+.footer-content .social_icon a:hover {
+    color: #ffbfc4;
+    background: linear-gradient(45deg, #ff9fa7, #ff432a);
+    box-shadow: 0 5px 15px rgba(255, 95, 109, 0.6);
+    transform: translateY(-15px);
+}
+
+.footer-content p {
+    margin: 10px 0;
+    font-size: 18px;
+    line-height: 1.6;
+    opacity: 0.75;
+}
+
+.footer-content p a {
+    color: #ff5f6d;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-content p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsivitate */
+@media (max-width: 768px) {
+    .footer-content {
+        padding: 30px 10px;
+    }
+
+    .footer-content .social_icon a {
+        font-size: 20px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .footer-content p {
+        font-size: 12px;
+    }
+}
+
+        p1 {
+            color: black;
+            font-size: 18px;
+            text-align: center;
+        }
+        
+        img {
+            width: 1100px;
+            height: 525px;
+            margin-top: 28px;
+            border-radius: 39px;
+        }
+        p {
+            color: white;
+            font-size: 17px;
+            padding-left: 10px;
+        }
+        .small-image {
+    width: 250px;  /* Lățimea dorită */
+    height: 80px; /* Înălțimea dorită */
+    background-image: url('logospital.png');
+    background-size: cover; /* Redimensionează pentru a umple complet spațiul */
+    background-position: center; /* Centrează imaginea */
+    margin-top: 10px;
+    position: relative;
+    transform: translateX(173%);
+}
+.medium-image {
+    width: 115px;  /* Lățimea dorită */
+    height: 95px; /* Înălțimea dorită */
+    background-image: url('medicina_muncii.png');
+    background-size: cover; /* Redimensionează pentru a umple complet spațiul */
+    background-position: center; /* Centrează imaginea */
+    margin-top: 15px;
+}
+.cv-button {
+            position: relative;
+            display: inline-block;
+            font-size: 1.1em;
+            letter-spacing: .1em;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            text-transform: uppercase;
+            border: 1px solid #333;
+            padding: 5px 15px;
+            z-index: 1;
+            overflow: hidden;
+            transition: color 1s, box-shadow 1s;
+            opacity: 90%;
+            font-weight: 500;
+            margin-top: 20px;
+            transform: translateX(246%);
+        }
+
+        .cv-button:hover {
+            transition-delay: 0s, 1s;
+            color: #fff;
+            box-shadow:
+                0 0 10px rgb(255, 45, 45),
+                0 0 20px rgb(255, 45, 45),
+                0 0 40px rgb(255, 45, 45),
+                0 0 80px rgb(255, 45, 45),
+                0 0 160px rgb(255, 45, 45);
+        }
+
+        .cv-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50px;
+            width: 0;
+            height: 100%;
+            background: rgb(255, 0, 0);
+            transform: skewX(35deg);
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+        .cv-button:hover:before {
+            width: 100%;
+        }
+        @media (max-width: 767px) {
+    /* Imagini ajustate pentru dispozitive mobile */
+    .small-image {
+        width: 180px;  /* Lățimea mai mică pe mobil */
+        height: 60px; /* Înălțimea mai mică */
+        transform: translateX(0); /* Permite imaginei să fie vizibilă pe mobil */
+    }
+
+    .medium-image {
+        width: 90px;  /* Lățimea ajustată */
+        height: 75px; /* Înălțimea ajustată */
+        margin-top: 10px; /* Ajustează spațiul de deasupra */
+    }
+
+    /* Butonul ajustat pentru mobil */
+    .cv-button {
+        font-size: 0.9em; /* Dimensiunea fontului mai mică pe mobil */
+        padding: 6px 12px; /* Ajustează padding-ul pentru mobil */
+        margin-top: 15px; /* Reduce distanța de deasupra pe mobil */
+        transform: translateX(0); /* Butonul va fi complet vizibil */
+    }
+
+    .cv-button:hover {
+        box-shadow:
+            0 0 8px rgb(255, 45, 45),
+            0 0 16px rgb(255, 45, 45),
+            0 0 30px rgb(255, 45, 45),
+            0 0 60px rgb(255, 45, 45),
+            0 0 120px rgb(255, 45, 45);
+    }
+
+    .cv-button::before {
+        left: -30px; /* Ajustează poziția elementului înainte pentru a nu depăși marginea pe mobil */
+    }
+}
+        .action-button {
+            position: relative;
+            display: inline-block;
+            font-size: 1.1em;
+            letter-spacing: .1em;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            text-transform: uppercase;
+            border: 1px solid #333;
+            padding: 6px 20px;
+            z-index: 1;
+            overflow: hidden;
+            transition: color 1s, box-shadow 1s;
+            opacity: 90%;
+            font-weight: 500;
+            margin-top: 20px;
+            transform: translateX(140%);
+        }
+
+        .action-button:hover {
+            transition-delay: 0s, 1s;
+            color: #fff;
+            box-shadow:
+                0 0 10px rgb(171, 183, 209),
+                0 0 20px rgb(176, 200, 228),
+                0 0 40px rgb(168, 206, 255),
+                0 0 80px rgb(116, 153, 255),
+                0 0 160px rgb(83, 129, 255);
+        }
+
+        .action-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50px;
+            width: 0;
+            height: 100%;
+            background: rgb(0, 153, 255);
+            transform: skewX(-50deg);
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+        .action-button:hover:before {
+            width: 100%;
+        }
+        @media (max-width: 767px) {
+    .action-button {
+        font-size: 0.9em; /* Ajustează mărimea fontului */
+        padding: 10px 15px; /* Ajustează padding-ul pentru un spațiu mai mic */
+        transform: translateX(0%); /* Permite butonului să fie vizibil fără a fi ascuns */
+        margin-top: 10px; /* Reduce spațiul de deasupra butonului */
+    }
+
+    .action-button:hover {
+        box-shadow:
+            0 0 8px rgb(171, 183, 209),
+            0 0 15px rgb(176, 200, 228),
+            0 0 30px rgb(168, 206, 255),
+            0 0 60px rgb(116, 153, 255),
+            0 0 120px rgb(83, 129, 255);
+    }
+
+    .action-button::before {
+        left: -30px; /* Ajustează poziția elementului înainte pentru a nu depăși marginea pe mobil */
+    }
+}
+p2{
+    color: white;
+}
+h1{
+    color: white;
+    margin-bottom: 30px;
+}
+h4{
+    color: white;
+    font-size: 25px;
+}
+.box {
+    position: relative;
+    min-width: 350px;
+    z-index: 1; /* Setăm z-index pentru a controla ordinea de afișare */
+    transition: transform 0.9s ease, box-shadow 0.9s ease, filter 0.9s ease, opacity 0.9s ease; /* Tranziții pentru toate proprietățile relevante */
+}
+
+/* Stile pentru listă și cutii */
+.box .list {
+    position: relative;
+    display: flex;
+    padding: 13px;
+    gap: 10px;
+    border-radius: 15px;
+    margin: 10px 0;
+    cursor: pointer;
+    background: rgb(167, 58, 58);
+    opacity: 0.9;
+    filter: blur(0.3px);
+    transition: scale 0.9s ease, transform 0.6s ease, opacity 0.9s ease, box-shadow 0.6s ease; /* Tranziții pentru efecte de hover */
+}
+
+/* Efectul la hover pe box-ul activ */
+.box .list:hover {
+    z-index: 4; /* Ridică box-ul hoverat pentru a-l aduce deasupra */
+    box-shadow: -10px 20px 35px rgba(0, 0, 0, 9); /* Umbra mai puternică pentru efectul de ridicare */
+    transform: scale(1.17); /* Mărește box-ul pentru efectul de ridicare */
+    opacity: 1; /* Restabilește opacitatea completă */
+    filter: none; /* Elimină blur-ul pe boxul activ */
+}
+
+/* Textul rank va deveni vizibil doar la hover */
+.box .list .content .rank {
+    position: absolute;
+    right: -105px;
+    color: rgb(255, 255, 255);
+    font-size: 2em;
+    opacity: 0; /* Rank-ul este invizibil inițial */
+    transition: 0.5s ease; /* Animație pentru rank */
+}
+
+/* La hover, rank-ul devine vizibil și se mișcă spre dreapta */
+.box .list:hover .content .rank {
+    opacity: 1;
+    right: 20px; /* Mișcă rank-ul spre dreapta */
+    transition: 0.9s ease-out; /* Animație de tranziție pentru mișcare */
+}
+.box .list .content .old {
+    position: absolute;
+    bottom: 10px;
+    right: -105px;
+    color: rgb(255, 255, 255);
+    font-size: 1em;
+    opacity: 0; /* Rank-ul este invizibil inițial */
+    transition: 0.5s ease; /* Animație pentru rank */
+}
+
+/* La hover, rank-ul devine vizibil și se mișcă spre dreapta */
+.box .list:hover .content .old {
+    opacity: 0.50;
+    right: 20px; /* Mișcă rank-ul spre dreapta */
+    transition: 0.9s ease-out; /* Animație de tranziție pentru mișcare */
+}
+
+/* Restul stilurilor */
+.box .list .content h4 {
+    line-height: 1.2em;
+    font-weight: 600;
+}
+
+.box .list .content p {
+    font-size: 0.75em;
+}
+
+.box .list .content .rank small {
+    font-weight: 500;
+    opacity: 0.55;
+}
+
+.box .list .imgBx {
+    position: relative;
+    width: 55px;
+    height: 55px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-right: 10px;
+}
+
+.box .list .imgBx img {
+    position: absolute;
+    top: -28px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Responsivitate: pe ecrane mici, se aplică stiluri de adaptare */
+@media (max-width: 768px) {
+    header nav a {
+        margin: 0 10px;
+        padding: 10px 15px;
+    }
+
+    .service-card {
+        width: 100%; /* Să ocupe întreaga lățime pe dispozitive mici */
+    }
+
+    img {
+        width: 100%; /* Să se redimensioneze automat pe mobil */
+        height: auto;
+    }
+}
+/* Stiluri generale pentru întreaga secțiune */
+#conducerea-spitalului {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    margin-bottom: 10;
+    padding-bottom: 30px; /* Adăugăm padding la bază */
+}
+
+.sub-department-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+    margin-top: 30px;
+}
+/* Stiluri pentru fiecare sub-departament (mic dreptunghi) */
+.sub-department {
+    width: 40%; /* Dimensiune mai mică pentru box */
+    height: 150px; /* Înălțime redusă pentru dreptunghi */
+    background-color: #fff;  /* Fundal alb */
+    border-radius: 5px;  /* Colțuri ușor rotunjite */
+    overflow: hidden;  /* Ascundem orice conținut care depășește boxul */
+    transition: transform 0.7s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.9);
+    display:flex;
+    flex-direction: row;
+}
+
+/* Efect de mărire la hover și arătarea overflow-ului */
+.sub-department:hover {
+    transform: scale(1.15); /* Mărire la hover */
+    overflow: visible;  /* Arată overflow-ul când cursorul este pe box */
+}
+
+.image-box {
+    width: 115px;
+    height: 100%; /* Ajustăm dimensiunea imaginii în box */
+    background-color: transparent;  /* Fundal transparent pentru imagine */
+    display: flex;
+    justify-content: left;
+    align-items: center; /* Aliniere centrata pentru imagine */
+    justify-content: center;
+    padding-left: 10px;
+}
+
+.image-box img {
+    width: 115px; /* Lățimea imaginii */
+    height: 105px; /* Înălțimea imaginii */
+    margin-bottom: 30px;
+    margin-left: 5px;
+    border-radius: 15%; /* Transformă imaginea într-un cerc */
+    object-fit: cover; /* Asigură că imaginea nu este distorsionată */
+}
+.logo-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+    height: 80px;  /* Înălțimea containerului pentru logo */
+    margin-top: 30px;
+}
+
+.logo-box img {
+    width: 175px;  /* Lățimea logo-ului */
+    height: auto; /* Înălțimea logo-ului se ajustează automat în funcție de lățime */
+    object-fit: cover; /* Asigură că logo-ul nu este distorsionat */
+}
+
+.image-separator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+    height: 80px;  /* Înălțimea containerului pentru logo */
+    margin-top: 30px;
+}
+
+.image-separator img {
+    width: 135px;  /* Lățimea logo-ului */
+    height: auto; /* Înălțimea logo-ului se ajustează automat în funcție de lățime */
+    object-fit: cover; /* Asigură că logo-ul nu este distorsionat */
+    margin-bottom: 15px;
+}
+
+.divider-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5%;
+    height: 80px;  /* Înălțimea containerului pentru logo */
+    margin-top: 30px;
+}
+
+.divider-image img {
+    width: 110px;  /* Lățimea logo-ului */
+    height: auto; /* Înălțimea logo-ului se ajustează automat în funcție de lățime */
+    object-fit: cover; /* Asigură că logo-ul nu este distorsionat */
+    margin-top: 10px;
+}
+/* Medicina Muncii */
+.medicina-muncii {
+    background-color: #006eff;  /* Albastru deschis pentru Medicina Muncii */
+}
+
+.medicina-muncii.blue {
+    border-left: 4px solid #333;  /* Border albastru pentru Medicina Muncii */
+}
+
+.medicina-muncii.red {
+    border-left: 4px solid #333;  /* Border roșu pentru Medicina Muncii */
+}
+
+/* Directia Sanatatii Los Santos */
+.dsls {
+    background-color: #0c9c24;  /* Verde deschis pentru DSLS */
+}
+
+.dsls.green {
+    border-left: 4px solid #333;  /* Border verde pentru DSLS */
+}
+
+.dsls.purple {
+    border-left: 4px solid #333;  /* Border violet pentru DSLS */
+}
+
+/* ISULS */
+.isuls {
+    background-color: #993232;  /* Verde deschis pentru ISULS */
+}
+
+.isuls.blue {
+    border-left: 4px solid #333;
+}
+.isuls.yellow {
+    border-left: 4px solid #333;  /* Border galben pentru ISULS */
+}
+#conducerea-spitalului span{
+    width: 100%;
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 23px;
+}
+.sub-department-details{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+}
+.sub-department-details p{
+    line-height: 140%;
+    padding-left: 0;
+}
+.sub-department-details h4{
+    margin-bottom: 17px;
+}
+@media (max-width: 768px) {
+    .sub-department-container {
+        flex-direction: column; /* Așezare pe coloană */
+        gap: 20px; /* Spațiu mai mic între elemente */
+    }
+
+    .sub-department {
+        width: 100%; /* Ocupă întreaga lățime */
+        height: auto; /* Înălțime automată pentru adaptare */
+        flex-direction: column; /* Așezare pe verticală */
+        padding: 15px; /* Adaugă padding intern */
+    }
+
+    .image-box {
+        width: 100px; /* Dimensiune mai mică pentru imagini */
+        height: 100px;
+        padding: 0;
+        margin-bottom: 10px; /* Spațiu sub imagine */
+    }
+
+    .image-box img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .sub-department-details {
+        padding-left: 0;
+        text-align: center; /* Centrare text */
+    }
+
+    .sub-department-details h4 {
+        margin-bottom: 10px;
+        font-size: 1.1rem; /* Font mai mic */
+    }
+
+    .sub-department-details p {
+        font-size: 0.9rem; /* Font mai mic */
+    }
+}
+
+/* Responsivitate pentru ecrane foarte mici */
+@media (max-width: 480px) {
+    .sub-department {
+        flex-direction: row; /* Elemente pe coloană */
+        align-items: center; /* Centrare elemente */
+    }
+
+    .sub-department-details h4 {
+        font-size: 1rem;
+    }
+
+    .sub-department-details p {
+        font-size: 0.8rem;
+    }
+
+    .image-box img {
+        width: 80px;
+        height: 80px;
+    }
+}
+#medic {
+    position: absolute;
+    font-size: 1.1em;
+    color: white;
+    margin-left: 335px;
+    text-align: left;
+    font-weight: 600;
+    font-style: italic;
+}
+.collapsible {
+            background-color: #ff5233;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+            text-align: center;
+            outline: none;
+            font-size: 16px;
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 26px;
+        }
+
+        .collapsible:hover {
+            background-color: #94311f;
+        }
+
+        .content2 {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            background-color: transparent;
+            border-radius: 5px;
+            padding: 0 10px;
+        }
+
+        .content2.open {
+            max-height: 1000px; /* Ensure it fits all the content */
+            padding: 10px;
+        }
+
+        #contactForm {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, button {
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #ff3c00;
+            color: white;
+            cursor: pointer;
+            border: none;
+        }
+
+        button:hover {
+            background-color: #8a2000;
+        }
+
+        #responseMessage {
+            margin-top: 20px;
+            font-size: 14px;
+            color: green;
+        }
+    </style>
+</head>
+<body>        
+        <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+    <header>
+        <a href="#" class="logo">Departamentul Medical</a><span id="medic"></span>
+        <button class="hamburger" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>  
+        <nav class="nav-menu">
+            <a href="#home"  style="--clr:#ff4d4d;" >Acasă</a>
+            <a href="#about" style="--clr:#ff4d4d;">Despre noi</a>
+            <a href="#lista" style="--clr:#ff4d4d;">Medici</a>
+            <a href="#services" style="--clr:#ff4d4d;" >Servicii</a>
+            <a href="#contact" style="--clr:#ff4d4d;" >Cerere Audienta</a>
+            <a href="#contactevent" style="--clr:#ff4d4d;">Cerere Eveniment</a>
+            <a href="#conducerea-spitalului" style="--clr:#ff4d4d;">Sub Departamente</a>
+            <a href="#extra" style="--clr:#ff4d4d;">Informatii</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section id="home">
+            <h2>Acasă</h2>
+            <p>Bine te-am găsit pe site-ul oficial al Departamentului Medical.</p>
+            <img src="image.png">
+        </section>        
+
+        <section id="about">
+            <h2>Despre noi</h2>
+            <p>
+                Departamentul Medical funcționează cu un singur scop esențial: să îți oferim îngrijire de cea mai înaltă calitate, într-un cadru profesional, dedicat sănătății tale și bunăstării tale. Echipa noastră se angajează să îți furnizeze tratamente personalizate, bazate pe cele mai noi descoperiri și inovații din domeniul medical, astfel încât să te bucuri de un tratament eficient și sigur. În fiecare etapă a procesului, de la consult și diagnostic până la tratament și recuperare, te asigurăm că vei beneficia de soluții medicale de top, adaptate nevoilor tale specifice.
+                
+                În plus, ne concentrăm nu doar pe tratamentele fizice, ci și pe confortul și starea ta mentală, oferindu-ți un mediu calm, prietenos și sigur, unde să te simți încrezător și sprijinit pe parcursul întregului proces medical. Înțelegem cât de important este să fii tratat cu respect și empatie, motiv pentru care fiecare membru al echipei noastre este pregătit să îți acorde atenția de care ai nevoie. Astfel, în Departamentul Medical, pacienții nu sunt doar numere, ci sunt tratați ca persoane, cu nevoi individuale și unici în experiențele lor.</p>
+        </section>
+
+        <section id="lista">
+            <h2>Conducerea Spitalului</h2>
+            <div class="box">
+                <div class="list">
+                    <div class="imgBx">
+                        <img src="img_alin.png" ></img>
+                    </div>
+                    <div class="content">
+                       <h1 class="rank"><small> M - </small>001</h1>
+                       <h4>Darrin Rodriguez</h4>
+                       <p2>Director General</p2>
+                    <p class="old">Vechime: xxxx</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="list">
+                    <div class="imgBx">
+                        <img src="img_shade.png" ></img>
+                    </div>
+                    <div class="content">
+                       <h1 class="rank"><small> M - </small>002</h1>
+                       <h4>Shades Antonio</h4>
+                       <p2>Director Adjunct</p2>
+                       <p class="old">Vechime: xxxx</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="list">
+                    <div class="imgBx">
+                        <img src="img_mihu.png" ></img>
+                    </div>
+                    <div class="content">
+                       <h1 class="rank"><small> M - </small>003</h1>
+                       <h4>Mario Mihu</h4>
+                       <p2>Medic Inspector</p2>
+                       <p class="old">Vechime: xxxx</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="list">
+                    <div class="imgBx">
+                        <img src="img_shiva.png" ></img>
+                    </div>
+                    <div class="content">
+                       <h1 class="rank"><small> M - </small>004</h1>
+                       <h4>Shiva Lazzari</h4>
+                       <p2>Medic Inspector</p2>
+                       <p class="old">Vechime: xxxx</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="list">
+                    <div class="imgBx">
+                        <img src="img_itz.png" ></img>
+                    </div>
+                    <div class="content">
+                       <h1 class="rank"><small> M - </small>005</h1>
+                       <h4>Mendez Onfroy</h4>
+                       <p2>Medic Chirurg</p2>
+                       <p class="old">Vechime: xxxx</p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="list">
+                    <div class="imgBx">
+                        <img src="img_brown.png" ></img>
+                    </div>
+                    <div class="content">
+                       <h1 class="rank"><small> M - </small>007</h1>
+                       <h4>Brown Allanon</h4>
+                       <p2>Medic Chirurg</p2>
+                       <p class="old">Vechime: xxxx</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2>Servicii</h2>
+            <div class="services">
+                <div class="service-card">
+                    <i class="fas fa-stethoscope"></i>
+                    <h3>Consultații medicale</h3>
+                    <p1>Consulatii complet gratiuite in cadrul Spitalului.</p1>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-hospital"></i>
+                    <h3>Interventii Chirurgicale</h3>
+                    <p1>Interventii de orice tip, gratis sau contra cost.</p1>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>Tratament de specialitate</h3>
+                    <p1>Tratament specializat pentru diverse afecțiuni.</p1>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-ambulance"></i>
+                    <h3>Servicii de urgență</h3>
+                    <p1>Intervenții de urgență cu echipamente moderne.</p1>
+                </div>
+        </section>
+
+            <section id="conducerea-spitalului" style="margin-top: 100px; gap:10px; display: flex; flex-direction: column;">
+                <h2>Sub Departamentele Spitalului</h2>
+                <span>Medicina Muncii Los Santos</span>
+                <div class="sub-department-container">
+                    <!-- Primele 2 sub-departamente pentru Medicina Muncii -->
+                    <div class="sub-department medicina-muncii blue">
+                        <div class="image-box">
+                            <img src="img_ampu.png" alt="Marius">
+                        </div>
+                        <div class="sub-department-details">
+                            <h4>Ampu Dragusin</h4>
+                            <p class="role">Inspector General M.M.L.S</p>
+                            <p class="rank"><small>Contact: </small>@zeiyxl nr tel: 929-1526</p>
+                        </div>                        
+                    </div>
+                        <!-- Logo mic între sub-departamente -->
+        <div class="logo-box">
+            <img src="medicina_muncii.png" alt="Logo" />
+        </div>
+                    <div class="sub-department medicina-muncii red">
+                        <div class="image-box">
+                            <img src="img_jobine.png" alt="Susan">
+                        </div>
+                        <div class="sub-department-details">
+                            <h4>Jobine George</h4>
+                            <p class="role">Inspector Sef M.M.L.S</p>
+                            <p class="rank"><small>Contact: </small>@caligutz nr tel: 554-4056</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <span>Directia Sanatatii Los Santos</span>
+                <div class="sub-department-container">
+                    <!-- Următoarele 2 sub-departamente pentru DSLS -->
+                    <div class="sub-department dsls green">
+                        <div class="image-box">
+                            <img src="img_manolescu.png" alt="Marius">
+                        </div>
+                        <div class="sub-department-details">
+                            <h4>Alex Manolescu</h4>
+                            <p class="role">Inspector General D.S.L.S</p>
+                            <p class="rank"><small>Contact: </small>@alexx122 nr tel: 168-0276</p>
+                        </div>
+                    </div>
+
+                    <div class="image-separator">
+                        <img src="img_dsls.png" alt="Separator">
+                    </div>
+                
+                    <div class="sub-department dsls purple">
+                        <div class="image-box">
+                            <img src="img_macovei.png" alt="Susan">
+                        </div>
+                        <div class="sub-department-details">
+                            <h4>Macovei Marius-Iocan</h4>
+                            <p class="role">Inspector Sef D.S.L.S</p>
+                            <p class="rank"><small>Contact: </small>@mario_mcv nr tel: 517-1122</p>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Secțiunea ISULS inclusă în cadrul aceleași secțiuni -->
+                <span>Inspectoratul pentru Situatii de Urgenta Los Santos</span>
+                <div class="sub-department-container">
+                    <!-- Sub-departamente pentru ISULS -->
+                    <div class="sub-department isuls blue">
+                        <div class="image-box">
+                            <img src="img_iordache.png" alt="Ion Popescu">
+                        </div>
+                        <div class="sub-department-details">
+                            <h4>Iordache Daniel</h4>
+                            <p class="role">Inspector General I.S.U.L.S</p>
+                            <p class="rank"><small>Contact: </small>@oldspicexray nr tel: 877-8501</p>
+                        </div>
+                    </div>
+
+                    <div class="divider-image">
+                        <img src="img_isuls.png" alt="Divider Logo" />
+                    </div>
+            
+                    <div class="sub-department isuls yellow">
+                        <div class="image-box">
+                            <img src="img_anvelopa.png" alt="Maria Ionescu">
+                        </div>
+                        <div class="sub-department-details">
+                            <h4>Anvelopa Andrei</h4>
+                            <p class="role">Inspector Sef I.S.U.L.S</p>
+                            <p class="rank"><small>Contact: </small>@andrei.07 nr tel: 904-2311</p>
+                        </div>
+                    </div>
+                    <a href="https://programari-pcls.vercel.app/" class="action-button">Creează o Programare</a>
+                </div>
+            </section>
+            
+            <button class="collapsible">Cerere Audiență</button>
+        <div class="content2">
+            <section id="contact">
+                <form id="contactForm">
+                    <label for="NUME">Nume:</label>
+                    <input type="text" id="NUME" placeholder="Nume și Prenumele Dvs" required>
+                    
+                    <label for="ID">CNP:</label>
+                    <input type="number" id="ID" placeholder="Menționați Id-ul Dvs" required>
+    
+                    <label for="NUME_RECLAMAT">Nume Reclamat:</label>
+                    <input type="text" id="NUME_RECLAMAT" placeholder="Nume și Prenumele medicului reclamat" required>
+    
+                    <label for="CALL_SIGN">Call-sign Medic:</label>
+                    <input type="text" id="CALL_SIGN" placeholder="Insigna medicului reclamat" required>
+    
+                    <label for="NUMAR_DE_TEL">Număr de telefon:</label>
+                    <input type="text" id="NUMAR_DE_TEL" placeholder="Numărul dvs de telefon" required maxlength="8">
+    
+                    <label for="DATA">Data incidentului:</label>
+                    <input type="text" id="DATA" placeholder="Menționați Data incidentului" required>
+    
+                    <label for="EMAIL">Discord:</label>
+                    <input type="text" id="EMAIL" placeholder="Numele dvs de pe Discord" required>
+    
+                    <label for="DETALII">Dovada:</label>
+                    <input id="DETALII" placeholder="Atașați un link cu dovada video/foto" required>
+    
+                    <button type="submit">Trimite Cererea De Audienta</button>
+                </form>
+                <div id="responseMessage"></div>
+            </section>
+        </div>
+        <button class="collapsible second">Cerere Eveniment</button>
+        <div class="content2">
+            <section id="contactevent">
+                <form id="eventForm">
+                    <label for="NUME">Nume:</label>
+                    <input type="text" id="NAME" placeholder="Numele Dvs" required>
+                
+                    <label for="NUME_EVENIMENT">Nume Eveniment:</label>
+                    <input type="text" id="NUME_EVENIMENT" placeholder="Numele evenimentului" required>
+                
+                    <label for="LOCATIE">Locație:</label>
+                    <input type="text" id="LOCATIE" placeholder="Locația evenimentului" required>
+                
+                    <label for="DATA_EVENIMENT">Data Evenimentului:</label>
+                    <input type="text" id="DATA_EVENIMENT" placeholder="Data evenimentului" required>
+                
+                    <label for="DESCRIERE">Descriere Eveniment:</label>
+                    <input id="DESCRIERE" placeholder="Detalii eveniment" required>
+                
+                    <label for="CONTACT">Număr de contact:</label>
+                    <input type="text" id="CONTACT" placeholder="Numărul de telefon pentru contact" required maxlength="8">
+                
+                    <button type="submit">Trimite Cererea Pentru Eveniment</button>
+                </form>
+                <div id="responseMessageEveniment"></div>
+            </section>
+            </div>
+              
+            </section> 
+            <section id="extra" style="margin-top: 100px;">
+                <h2>Informatii Extra</h2>
+                <p>- Pentru a intra in Departament este nevoie de 50 ore</p>
+                <p>- In cazul in care ai luat CK se poate intra chiar si la 0 ore pe character</p>
+                <p>- Sunteti obligati o data cu intrare in Departament sa scoatei tatuajele faciale</p>
+                <p>- Structura Departamentului este una foarte dezvoltata care are nevoie de timp pentru a fii inteles</p>
+                <p>- Regulamentul pentru sustinerea testelor se gaseste pe forum</p>
+                <p>- Foarte multe intrari si iesiri din Departament pot aduce la un BlackList temporar</p>
+                <p>- O data cu intrarea in Departament nu se poate face alt job, fie part time sau full time</p>
+                <div class="small-image"></div>
+                <small-image></small-image>
+                <a href="https://forum.fplayt.ro/index.php?/forums/forum/165-spitalul-general-aplicatii-cv/" class="cv-button">Creează un CV</a>
+            </section>
+                </form>
+    </div>
+                <div class="footer-content">
+                <footer>
+                    <ul class="social_icon">
+                      <li><a href="https://www.instagram.com/medici_fplayt/"><ion-icon name="logo-instagram"></ion-icon></a></li>    
+                      <li><a href="https://www.youtube.com/@allyn0214"><ion-icon name="logo-youtube"></ion-icon></a></li>  
+                      <li><a href="https://discord.gg/fplayt"><ion-icon name="logo-discord"></ion-icon></a></li>  
+                      <li><a href="https://www.tiktok.com/@medici_fplayt"><ion-icon name="logo-tiktok"></ion-icon></a></li>  
+                    </ul> 
+                    <p>&copy; 2024 Departamentul Medical | All rights reserved</p>
+                    <p>Pentru probleme si nelamuriri lasati un mesaj la : @tristan1112</p>
+                </footer>
+            </div>
+                <div id="responseMessageEveniment"></div>
+                </section>
+</body>
+<script type ="module" src="./script.js"></script>
+</html>
+</section>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script>
+ // Toggle collapsible content
+ document.querySelector('.collapsible').addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            content.classList.toggle('open');
+        });
+         // Toggle collapsible content
+ document.querySelector('.collapsible.second').addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            content.classList.toggle('open');
+        });
+</script>
