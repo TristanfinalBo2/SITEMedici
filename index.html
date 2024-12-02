@@ -13,6 +13,7 @@
     padding: 0;
     box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            user-select: none;
         }
 
         body {
@@ -493,16 +494,26 @@ nav.nav-menu a:hover::before {
             font-size: 17px;
             padding-left: 10px;
         }
-        .small-image {
-    width: 250px;  /* Lățimea dorită */
-    height: 80px; /* Înălțimea dorită */
-    background-image: url('logospital.png');
-    background-size: cover; /* Redimensionează pentru a umple complet spațiul */
-    background-position: center; /* Centrează imaginea */
-    margin-top: 10px;
-    position: relative;
-    transform: translateX(173%);
-}
+        .imagini {
+            width: 100%;
+            height: 100px;
+            margin-top: 25px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .imagini img:nth-child(1){
+            width: 20%;
+            height: 80%;
+            border-radius: 0;
+        }
+
+        .imagini img:nth-child(2){
+            width: 8%;
+            height: 80%;
+        }
 .medium-image {
     width: 115px;  /* Lățimea dorită */
     height: 95px; /* Înălțimea dorită */
@@ -527,7 +538,6 @@ nav.nav-menu a:hover::before {
             opacity: 90%;
             font-weight: 500;
             margin-top: 20px;
-            transform: translateX(246%);
         }
 
         .cv-button:hover {
@@ -1389,11 +1399,12 @@ h4{
                 <p>- Regulamentul pentru sustinerea testelor se gaseste pe forum</p>
                 <p>- Foarte multe intrari si iesiri din Departament pot aduce la un BlackList temporar</p>
                 <p>- O data cu intrarea in Departament nu se poate face alt job, fie part time sau full time</p>
-                <div class="small-image"></div>
-                <img src="image_fpt.png"style='position:relative;right: 50px;width: 10%;'>
-                <a href="https://forum.fplayt.ro/index.php?/forums/forum/165-spitalul-general-aplicatii-cv/" class="cv-button">Creează un CV</a>
+                <div class="bottom" style="width: 100%; display: flex; flex-direction: row; gap: 20px; align-items: center; justify-content: center; box-sizing: border-box;">
+                    <img src="./logospital.png" style="width: 20%; height: 20%; border-radius: 0;  margin: 0;">
+                    <a href="https://forum.fplayt.ro/index.php?/forums/forum/165-spitalul-general-aplicatii-cv/" class="cv-button" style="margin-top: 0;">Creează un CV</a>
+                    <img src="./image_fpt.png" style="width: 12%; height: 12%; border-radius: 0; margin: 0;">
+                </div>
             </section>
-                </form>
     </div>
                 <div class="footer-content">
                 <footer>
