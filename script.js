@@ -69,6 +69,7 @@ const eventDate = document.getElementById('DATA_EVENIMENT').value.trim();
 const description = document.getElementById('DESCRIERE').value.trim();
 const contact = document.getElementById('CONTACT').value.trim();
 const discordName = document.getElementById('EMAIL').value.trim();
+const helpers = document.getElementById('AJUTOARE').value.trim();
 
 const webhookUrl = "https://discord.com/api/webhooks/1298031124462698586/lVJSl2ar2wfpgJey6hAhy3TjYEZ_2Wz6BZ0Wac1wj6OFdacQE0VTAxfxlMAsTcjB2m4G"; // Înlocuiește cu URL-ul tău
 
@@ -80,7 +81,8 @@ content: `:tada: **Cerere Eveniment** :tada: \n
 **3) Locatie:** ${location}\n
 **4) Data Evenimentului:** ${eventDate}\n
 **5) Descriere Eveniment:** ${description}\n
-**6) Număr de contact:** ${contact}\n`
+**6) Număr de contact:** ${contact}\n
+**7) Ce fel de ajutor are nevoie la eveniment:** ${helpers}`
 };
 
 // Trimitem datele la Discord folosind fetch
