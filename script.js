@@ -71,7 +71,7 @@ const contact = document.getElementById('CONTACT').value.trim();
 const discordName = document.getElementById('EMAIL').value.trim();
 const helpers = document.getElementById('AJUTOARE').value.trim();
 
-const webhookUrl = "https://discord.com/api/webhooks/1298031124462698586/lVJSl2ar2wfpgJey6hAhy3TjYEZ_2Wz6BZ0Wac1wj6OFdacQE0VTAxfxlMAsTcjB2m4G"; // Înlocuiește cu URL-ul tău
+const webhookUrl = "https://discordapp.com/api/webhooks/1313551020562841721/HKybFtoZPWRbzf_Bqmo7mhzrBGZtbKtx5fu6arFWewDnJGas9aXPoku2Jds4zoSG_Eni"; // Înlocuiește cu URL-ul tău
 
 // Construim mesajul de payload
 const payload = {
@@ -139,7 +139,7 @@ formatPhoneNumber('CONTACT');
         const discordName = document.getElementById('EMAIL').value.trim();
         const proof = document.getElementById('DETALII').value.trim();
 
-        const webhookUrl = "https://discord.com/api/webhooks/1298031121472290950/ecF9Uusap4W1_JafgJozvm9LkRePjRtO2N7k_Yg1YqrvyRz1kunekHI3XM2YG5KNE71p";
+        const webhookUrl = "https://discordapp.com/api/webhooks/1300111955003965451/XRSZ-2xrgA8Tpi8ogr3bATh1gVXzfnGcPvsHlklvmC-WjQT1r5ImSecEMr9a9TfTooT1";
 
         // Construim mesajul de payload
         const payload = {
