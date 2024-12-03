@@ -70,7 +70,7 @@ const description = document.getElementById('DESCRIERE').value.trim();
 const contact = document.getElementById('CONTACT').value.trim();
 const discordName = document.getElementById('EMAIL').value.trim();
 
-const webhookUrl = "https://discord.com/api/webhooks/1298031124462698586/lVJSl2ar2wfpgJey6hAhy3TjYEZ_2Wz6BZ0Wac1wj6OFdacQE0VTAxfxlMAsTcjB2m4G"; // Înlocuiește cu URL-ul tău
+const webhookUrl = "https://discordapp.com/api/webhooks/1313551020562841721/HKybFtoZPWRbzf_Bqmo7mhzrBGZtbKtx5fu6arFWewDnJGas9aXPoku2Jds4zoSG_Eni"; // Înlocuiește cu URL-ul tău
 
 // Construim mesajul de payload
 const payload = {
