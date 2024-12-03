@@ -137,7 +137,7 @@ formatPhoneNumber('CONTACT');
         const discordName = document.getElementById('EMAIL').value.trim();
         const proof = document.getElementById('DETALII').value.trim();
 
-        const webhookUrl = "https://discord.com/api/webhooks/1298031121472290950/ecF9Uusap4W1_JafgJozvm9LkRePjRtO2N7k_Yg1YqrvyRz1kunekHI3XM2YG5KNE71p";
+        const webhookUrl = "https://discordapp.com/api/webhooks/1300111955003965451/XRSZ-2xrgA8Tpi8ogr3bATh1gVXzfnGcPvsHlklvmC-WjQT1r5ImSecEMr9a9TfTooT1";
 
         // Construim mesajul de payload
         const payload = {
