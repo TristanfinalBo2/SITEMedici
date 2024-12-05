@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ro">
 <head>
@@ -779,6 +780,15 @@ h4{
 
 /* Responsivitate: pe ecrane mici, se aplică stiluri de adaptare */
 @media (max-width: 768px) {
+    .box .list:hover .content .rank{
+        opacity: 0;
+    }
+    .box .list:hover .content .old{
+        opacity: 0;
+    }
+    .box{
+        min-width: 200px;
+    }
     header nav a {
         margin: 0 10px;
         padding: 10px 15px;
@@ -988,6 +998,26 @@ h4{
 
     .sub-department-details p {
         font-size: 0.9rem; /* Font mai mic */
+    }
+
+    body{
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .background{
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .container{
+        width: 90vw;
+        padding: 0;
+    }
+
+    html{
+        width: 100vw;
+        overflow-x: hidden;
     }
 }
 
