@@ -70,19 +70,23 @@ const description = document.getElementById('DESCRIERE').value.trim();
 const contact = document.getElementById('CONTACT').value.trim();
 const discordName = document.getElementById('EMAIL').value.trim();
 const helpers = document.getElementById('AJUTOARE').value.trim();
-
+const eventClock = document.getElementById('ORA_EVENIMENT').value.trim();
+const photos = document.getElementById('POZE').value.trim();
 const webhookUrl = "https://discordapp.com/api/webhooks/1313551020562841721/HKybFtoZPWRbzf_Bqmo7mhzrBGZtbKtx5fu6arFWewDnJGas9aXPoku2Jds4zoSG_Eni"; // Înlocuiește cu URL-ul tău
 
 // Construim mesajul de payload
 const payload = {
-content: `:tada: **Cerere Eveniment** :tada: \n
+content: `<@908967632865202208>\n
+:tada: **Cerere Eveniment** :tada: \n
 **1) Nume:** ${name}\n
 **2) Nume Eveniment:** ${eventName}\n
 **3) Locatie:** ${location}\n
 **4) Data Evenimentului:** ${eventDate}\n
+**5) Ora Evenimentului:** ${eventClock}\n
 **5) Descriere Eveniment:** ${description}\n
 **6) Număr de contact:** ${contact}\n
-**7) Ce fel de ajutor are nevoie la eveniment:** ${helpers}`
+**7) Ce fel de ajutor are nevoie la eveniment:** ${helpers}
+**8) Imagini:** ${photos}`
 };
 
 // Trimitem datele la Discord folosind fetch
