@@ -76,7 +76,7 @@ const webhookUrl = "https://discordapp.com/api/webhooks/1313551020562841721/HKyb
 
 // Construim mesajul de payload
 const payload = {
-content: `<@908967632865202208>\n
+content: `<@&908967632865202208>\n
 :tada: **Cerere Eveniment** :tada: \n
 **1) Nume:** ${name}\n
 **2) Nume Eveniment:** ${eventName}\n
@@ -85,7 +85,7 @@ content: `<@908967632865202208>\n
 **5) Ora Evenimentului:** ${eventClock}\n
 **5) Descriere Eveniment:** ${description}\n
 **6) Număr de contact:** ${contact}\n
-**7) Ce fel de ajutor are nevoie la eveniment:** ${helpers}
+**7) Ce fel de ajutor are nevoie la eveniment:** ${helpers}\n
 **8) Imagini:** ${photos}`
 };
 
