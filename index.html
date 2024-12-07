@@ -208,7 +208,7 @@ nav.nav-menu a {
     color: #fff;
     font-weight: 500;
     transition: color 0.3s;
-    text-align: center; /* Asigură alinierea pe mijloc */
+    text-align: center;
 }
 
 nav.nav-menu a:hover {
@@ -228,6 +228,17 @@ nav.nav-menu a::before {
 
 nav.nav-menu a:hover::before {
     width: 100%;
+}
+
+/* Stil pentru butonul activ */
+nav.nav-menu a.active {
+    color: var(--clr);
+    font-weight: 700; /* Opțional, pentru a face textul mai proeminent */
+}
+
+nav.nav-menu a.active::before {
+    width: 100%;
+    background-color: var(--clr);
 }
 
 /* Butonul hamburger */

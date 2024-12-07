@@ -34,6 +34,35 @@ measurementId: "G-9MZ9ML041N"
      console.error("Error getting document:", error);
  });
 
+ // Preia toate link-urile din meniu
+const navLinks = document.querySelectorAll('.nav-menu a');
+
+// Preia partea de hash din URL
+const currentHash = window.location.hash;
+
+// Verifică fiecare link și adaugă clasa "active" pentru cel corespunzător
+navLinks.forEach(link => {
+    if (link.getAttribute('href') === currentHash) {
+        link.classList.add('active');
+    } else {
+        link.classList.remove('active');
+    }
+});
+
+// Reacționează la schimbarea hash-ului (ex: când utilizatorul navighează)
+window.addEventListener('hashchange', () => {
+    const newHash = window.location.hash;
+
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === newHash) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+});
+
+
     // JavaScript pentru meniul hamburger
 document.querySelector('.hamburger').addEventListener('click', function () {
 this.classList.toggle('active');
