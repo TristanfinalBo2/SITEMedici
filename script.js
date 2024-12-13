@@ -1,46 +1,56 @@
-import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js';
-import { getFirestore, doc, getDoc } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js'; // Add Firestore imports
-import { getDatabase, ref, child, get } from 'https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js'; // Realtime Database imports
-const firebaseConfig = {
-apiKey: "AIzaSyAkv2z5o--_QWEyiO0Tj_Nvpq2h28-21Rg",
-authDomain: "hr-medici.firebaseapp.com",
-projectId: "hr-medici",
-storageBucket: "hr-medici.firebasestorage.app",
-messagingSenderId: "125815151089",
-appId: "1:125815151089:web:dd920d8749221e6df08c50",
-measurementId: "G-9MZ9ML041N"
-};
- // Initialize Firebase
- const app = initializeApp(firebaseConfig);
-
- // Initialize Firestore
- const db = getFirestore(app); // This is where you got the error
- 
- // Reference to the document you want to retrieve from Firestore
- const docRef = doc(db, "medici", "2P56nByBKEOVrNeGiXlc");
- 
- // Get the document
- getDoc(docRef)
- .then((docSnap) => {
-     if (docSnap.exists()) {
-     // Retrieve the field "number" from the document
-     const number = docSnap.data().numar;
-     document.getElementById('medic').innerHTML =`~ ${number} Cadre Medicale`
-     } else {
-     console.log("No such document!");
-     }
- })
- .catch((error) => {
-     console.error("Error getting document:", error);
- });
-
- // Preia toate link-urile din meniu
 const navLinks = document.querySelectorAll('.nav-menu a');
 
-// Preia partea de hash din URL
 const currentHash = window.location.hash;
 
-// Verifică fiecare link și adaugă clasa "active" pentru cel corespunzător
+function fetchData() {
+    fetch('./posts.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const dataList = $('#data-list');
+            dataList.empty();
+
+            data.forEach(item => {
+                const listItem = $(
+                    `<div class="flex flex-col min-w-[32.5%] max-w-[32.5%] bg-zinc-600 rounded-xl shadow-md overflow-hidden border border-zinc-600 dark:border-zinc-700">
+                        <div class="w-full h-[60%] relative border-b border-zinc-600 dark:border-zinc-700">
+                            <img src="${item.imagine}" alt="Image" class="mt-0 w-full h-full rounded-md">
+                            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent p-4">
+                                <h3 class="text-white text-xl font-bold">Relatii Publice</h3>
+                            </div>
+                        </div>
+                        <div class="p-6 border-b border-zinc-600 dark:border-zinc-700">
+                            <h2 class="text-2xl font-semibold text-white-800 dark:text-zinc-100">${item.title}</h2>
+                            <p class="mt-2 text-white-600 dark:text-zinc-300">${item.text}</p>
+                            <div class="mt-4 flex gap-2">
+                                <span class="inline-block bg-red-100 text-red-700 px-3 py-1 rounded-full text-sm font-medium">#${item.hashtags}</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center px-6 py-4 bg-zinc-800 dark:bg-zinc-800 border-t border-zinc-600 dark:border-zinc-700">
+                            <button class="like-button bg-transparent hover:bg-transparent flex items-center text-gray-500 hover:text-red-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.94l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                                </svg>
+                                <span class="ml-2">Apreciaza</span>
+                            </button>
+                        </div>
+                    </div>`
+                );
+                $("#data-list").css("display", "flex")
+                dataList.append(listItem);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching data:', error);
+        });
+}
+
+fetchData();
+
 navLinks.forEach(link => {
     if (link.getAttribute('href') === currentHash) {
         link.classList.add('active');
@@ -49,7 +59,6 @@ navLinks.forEach(link => {
     }
 });
 
-// Reacționează la schimbarea hash-ului (ex: când utilizatorul navighează)
 window.addEventListener('hashchange', () => {
     const newHash = window.location.hash;
 
@@ -63,7 +72,6 @@ window.addEventListener('hashchange', () => {
 });
 
 
-    // JavaScript pentru meniul hamburger
 document.querySelector('.hamburger').addEventListener('click', function () {
 this.classList.toggle('active');
 document.querySelector('.nav-menu').classList.toggle('active');
@@ -88,9 +96,8 @@ document.querySelector('.nav-menu').classList.toggle('active');
     };
 
 document.getElementById('eventForm').addEventListener('submit', function(event) {
-event.preventDefault();  // Previne comportamentul implicit al formularului
+event.preventDefault();  
 
-// Preluăm datele din formular
 const name = document.getElementById('NAME').value.trim();
 const eventName = document.getElementById('NUME_EVENIMENT').value.trim();
 const location = document.getElementById('LOCATIE').value.trim();
@@ -103,7 +110,6 @@ const eventClock = document.getElementById('ORA_EVENIMENT').value.trim();
 const photos = document.getElementById('POZE').value.trim();
 const webhookUrl = "https://discordapp.com/api/webhooks/1313551020562841721/HKybFtoZPWRbzf_Bqmo7mhzrBGZtbKtx5fu6arFWewDnJGas9aXPoku2Jds4zoSG_Eni"; // Înlocuiește cu URL-ul tău
 
-// Construim mesajul de payload
 const payload = {
 content: `<@&908967632865202208>\n
 :tada: **Cerere Eveniment** :tada: \n
@@ -118,7 +124,6 @@ content: `<@&908967632865202208>\n
 **8) Imagini:** ${photos}`
 };
 
-// Trimitem datele la Discord folosind fetch
 fetch(webhookUrl, {
 method: 'POST',
 headers: { 'Content-Type': 'application/json' },
@@ -154,7 +159,6 @@ e.target.value = value;
 });
 }
 
-// Aplică formatul pentru ambele câmpuri
 formatPhoneNumber('NUMAR_DE_TEL');
 formatPhoneNumber('CONTACT');
 
@@ -174,7 +178,6 @@ formatPhoneNumber('CONTACT');
 
         const webhookUrl = "https://discordapp.com/api/webhooks/1300111955003965451/XRSZ-2xrgA8Tpi8ogr3bATh1gVXzfnGcPvsHlklvmC-WjQT1r5ImSecEMr9a9TfTooT1";
 
-        // Construim mesajul de payload
         const payload = {
             content: `:warning: **Cerere Audiență** :warning: \n
 **1) Nume:** ${name}\n
@@ -187,7 +190,6 @@ formatPhoneNumber('CONTACT');
 **8) Dovada:** ${proof}`
         };
 
-        // Trimitem datele la Discord folosind fetch
         fetch(webhookUrl, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -210,14 +212,11 @@ formatPhoneNumber('CONTACT');
     constructor() {
         super();
 
-        // Cream un shadow DOM
         const shadow = this.attachShadow({ mode: 'open' });
 
-        // Cream elementele interne: containerul și imaginea
         const container = document.createElement('div');
         const image = document.createElement('div');
 
-        // Adăugăm stiluri
         const style = document.createElement('style');
         style.textContent = `
             div {
@@ -230,16 +229,13 @@ formatPhoneNumber('CONTACT');
             }
         `;
 
-        // Setăm imaginea ca background în funcție de atributul `src`
         const src = this.getAttribute('src');
         image.style.backgroundImage = `url(${src})`;
 
-        // Adăugăm totul în shadow DOM
         shadow.appendChild(style);
         shadow.appendChild(container);
         container.appendChild(image);
     }
 }
 
-// Înregistrăm elementul personalizat <medium-image>
 customElements.define('medium-image', MediumImage);
