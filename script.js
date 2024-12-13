@@ -73,27 +73,28 @@ window.addEventListener('hashchange', () => {
 
 
 document.querySelector('.hamburger').addEventListener('click', function () {
-this.classList.toggle('active');
-document.querySelector('.nav-menu').classList.toggle('active');
+    this.classList.toggle('active');
+    document.querySelector('.nav-menu').classList.toggle('active');
 });
 
-    let sec = document.querySelectorAll('section');
-    let links = document.querySelectorAll('nav a');
+let sec = document.querySelectorAll('section');
+let links = document.querySelectorAll('nav a');
 
-    window.onscroll = () => {
-        sec.forEach(setction => {
-            let top = window.scrollY;
-            let offset = sec.offsetTop;
-            let height = sec.offsetHeight;
-            let id = sec.getAttribute('id');
+window.onscroll = () => {
+    sec.forEach(section => {
+        let top = window.scrollY;
+        let offset = section.offsetTop;  // Fix: use 'section' here
+        let height = section.offsetHeight;  // Fix: use 'section' here
+        let id = section.getAttribute('id');  // Fix: use 'section' here
 
-            if(top >= offset && top < offset + height)
+        if (top >= offset && top < offset + height) {
             links.forEach(link => {
-            link.classList.remove('active');
-            document.querySelector('nav a[href*=' + id +']').classList.add('active');
-        })
-        })
-    };
+                link.classList.remove('active');
+                document.querySelector('nav a[href*=' + id + ']').classList.add('active');
+            });
+        }
+    });
+};
 
 document.getElementById('eventForm').addEventListener('submit', function(event) {
 event.preventDefault();  
