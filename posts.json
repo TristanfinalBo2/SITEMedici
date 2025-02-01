@@ -1,19 +1,19 @@
 [
     {
         "title": "Adeverinte Medicale",
-        "imagine": "https://cdn.discordapp.com/attachments/1182391745946849281/1324408854020362312/image.png?ex=6792695d&is=679117dd&hm=b13b61310497b587f8b60190817fab8e893fe877827a059855afa4f13a5a6e3e&",
-        "text": "Spitalul din Sandy va informeaza ca in data de 29.01.2025 intre orele 15:00 si 16:00 se vor elibera adeverinte medicale. Suma este de 10.000$ impachetati.",
+        "imagine": "bg_adeverinte",
+        "text": "Spitalul din Sandy va informeaza ca in data de 02.02.2025 intre orele 15:00 si 16:00 se vor elibera adeverinte medicale. Suma este de 10.000$ impachetati.",
         "hashtags": "Adeverinte"
     },
     {
         "title": "🏥 Chirurgie Plastica 🏥",
-        "imagine": "https://cdn.discordapp.com/attachments/1310676006021107846/1334086301858660352/image-1.png?ex=679b4030&is=6799eeb0&hm=c742d1b55e79992f537d4e356736df8c0bdf54a4c03ff5d6a5cdd1fa68cd2e92&",
+        "imagine": "bg_faciala",
         "text": "Spitalul Judetean Viceory dispune de o tehnologie avansata pentru cei care vor o schimbare! Costul unei astfel de operatii este de 550.000$ si se poate face o singura data!",
         "hashtags": "Chirurgie Plastica"
     },
     {
         "title": "💉 Operatie Tatuaje 💉",
-        "imagine": "https://cdn.discordapp.com/attachments/1310676006021107846/1334086244438773780/image.png?ex=679b4022&is=6799eea2&hm=f2beadcd9ac0849dd89538cbc29f71dc4273808f17d8ecc16db7060aee7c381a&",
+        "imagine": "bg_tatuaje",
         "text": "Vino la spital pentru o schimbare! Spitalul Judetean Viceory va ofera beneficiul de a indeparta tatuajele de pe corp in schimbul sumei de 10.000$.",
         "hashtags": "Tatuaje"
     }
