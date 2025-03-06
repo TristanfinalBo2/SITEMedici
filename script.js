@@ -177,7 +177,7 @@ formatPhoneNumber('CONTACT');
         const discordName = document.getElementById('EMAIL').value.trim();
         const proof = document.getElementById('DETALII').value.trim();
 
-        const webhookUrl = "https://discordapp.com/api/webhooks/1300111955003965451/XRSZ-2xrgA8Tpi8ogr3bATh1gVXzfnGcPvsHlklvmC-WjQT1r5ImSecEMr9a9TfTooT1";
+        const webhookUrl = "https://discordapp.com/api/webhooks/1347218156921426031/7qDMc0JNKGLPFRswVxPknMeSGeI9AnrmnSq5MINXEwey4cXQGMuPcgqGYqVUxrZDefFd";
 
         const payload = {
             content: `:warning: **Cerere Audiență** :warning: \n
