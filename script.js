@@ -96,73 +96,22 @@ window.onscroll = () => {
     });
 };
 
-document.getElementById('eventForm').addEventListener('submit', function(event) {
-event.preventDefault();  
-
-const name = document.getElementById('NAME').value.trim();
-const eventName = document.getElementById('NUME_EVENIMENT').value.trim();
-const location = document.getElementById('LOCATIE').value.trim();
-const eventDate = document.getElementById('DATA_EVENIMENT').value.trim();
-const description = document.getElementById('DESCRIERE').value.trim();
-const contact = document.getElementById('CONTACT').value.trim();
-const discordName = document.getElementById('EMAIL').value.trim();
-const helpers = document.getElementById('AJUTOARE').value.trim();
-const eventClock = document.getElementById('ORA_EVENIMENT').value.trim();
-const photos = document.getElementById('POZE').value.trim();
-const webhookUrl = "https://discordapp.com/api/webhooks/1313551020562841721/HKybFtoZPWRbzf_Bqmo7mhzrBGZtbKtx5fu6arFWewDnJGas9aXPoku2Jds4zoSG_Eni"; // Înlocuiește cu URL-ul tău
-
-const payload = {
-content: `<@&908967632865202208>\n
-:tada: **Cerere Eveniment** :tada: \n
-**1) Nume:** ${name}\n
-**2) Nume Eveniment:** ${eventName}\n
-**3) Locatie:** ${location}\n
-**4) Data Evenimentului:** ${eventDate}\n
-**5) Ora Evenimentului:** ${eventClock}\n
-**5) Descriere Eveniment:** ${description}\n
-**6) Număr de contact:** ${contact}\n
-**7) Ce fel de ajutor are nevoie la eveniment:** ${helpers}\n
-**8) Imagini:** ${photos}`
-};
-
-fetch(webhookUrl, {
-method: 'POST',
-headers: { 'Content-Type': 'application/json' },
-body: JSON.stringify(payload)
-})
-.then(response => {
-if (response.ok) {
-document.getElementById('responseMessageEveniment').innerText = `Mulțumim, ${name}! Cererea Dvs de eveniment a fost înregistrată.`;
-document.getElementById('eventForm').reset();
-} else {
-return response.json().then(data => {
-    console.error('Răspuns eroare Discord:', data);
-    document.getElementById('responseMessageEveniment').innerText = "Eroare la trimiterea cererii. Te rugăm să încerci din nou.";
-});
-}
-})
-
-.catch(error => {
-console.error("Eroare la trimiterea cererii către Discord:", error);
-document.getElementById('responseMessageEveniment').innerText = "Eroare la trimiterea cererii. Te rugăm să încerci din nou.";
-});
-});
-
-
 function formatPhoneNumber(inputId) {
-const phoneInput = document.getElementById(inputId);
-phoneInput.addEventListener('input', function (e) {
-let value = e.target.value.replace(/\D/g, ''); // Elimină caracterele non-numerice
-if (value.length > 3) {
-    value = value.slice(0, 3) + '-' + value.slice(3, 7); // Adaugă cratima
-}
-e.target.value = value;
-});
+    const phoneInput = document.getElementById(inputId);
+    phoneInput.addEventListener('input', function (e) {
+    let value = e.target.value.replace(/\D/g, ''); // Elimină caracterele non-numerice
+    if (value.length > 3) {
+        value = value.slice(0, 3) + '-' + value.slice(3, 7); // Adaugă cratima
+    }
+    e.target.value = value;
+    });
 }
 
-formatPhoneNumber('NUMAR_DE_TEL');
-formatPhoneNumber('CONTACT');
+window.addEventListener("load", (event) => {
+    formatPhoneNumber('NUMAR_DE_TEL');
 
+  });
+  
 
     document.getElementById('contactForm').addEventListener('submit', function(event) {
         event.preventDefault();
@@ -180,15 +129,7 @@ formatPhoneNumber('CONTACT');
         const webhookUrl = "https://discordapp.com/api/webhooks/1347218156921426031/7qDMc0JNKGLPFRswVxPknMeSGeI9AnrmnSq5MINXEwey4cXQGMuPcgqGYqVUxrZDefFd";
 
         const payload = {
-            content: `:warning: **Cerere Audiență** :warning: \n
-**1) Nume:** ${name}\n
-**2) CNP:** ${cnp}\n
-**3) Numele medicului reclamat:** ${medicReclamat}\n
-**4) Call Sign Medic:** ${callSign}\n
-**5) Număr de telefon:** ${phone}\n
-**6) Discord:** ${discordName}\n
-**7) Data incidentului:** ${incidentDate}\n
-**8) Dovada:** ${proof}`
+            content: `:warning: **Cerere Audiență** :warning:\n**1) Nume:** ${name}\n**2) CNP:** ${cnp}\n**3) Numele medicului reclamat:** ${medicReclamat}\n**4) Call Sign Medic:** ${callSign}\n**5) Număr de telefon:** ${phone}\n**6) Discord:** ${discordName}\n**7) Data incidentului:** ${incidentDate}\n**8) Dovada:** ${proof}`
         };
 
         fetch(webhookUrl, {
