@@ -130,14 +130,14 @@ window.addEventListener("load", (event) => {
 
         const payload = {
             content: `:warning: **Cerere Audiență** :warning: \n
-                **1) Nume:** ${name}\n
-                **2) CNP:** ${cnp}\n
-                **3) Numele medicului reclamat:** ${medicReclamat}\n
-                **4) Call Sign Medic:** ${callSign}\n
-                **5) Număr de telefon:** ${phone}\n
-                **6) Discord:** ${discordName}\n
-                **7) Data incidentului:** ${incidentDate}\n
-                **8) Dovada:** ${proof}`
+**1) Nume:** ${name}\n
+**2) CNP:** ${cnp}\n
+**3) Numele medicului reclamat:** ${medicReclamat}\n
+**4) Call Sign Medic:** ${callSign}\n
+**5) Număr de telefon:** ${phone}\n
+**6) Discord:** ${discordName}\n
+**7) Data incidentului:** ${incidentDate}\n
+**8) Dovada:** ${proof}`
         };
 
         fetch(webhookUrl, {
