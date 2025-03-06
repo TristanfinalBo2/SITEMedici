@@ -111,50 +111,52 @@ formatPhoneNumber('NUMAR_DE_TEL');
 formatPhoneNumber('CONTACT');
 
 
-function sendAudienta() {
-    const name = document.getElementById('NUME').value.trim();
-    const cnp = document.getElementById('ID').value.trim();
-    const medicReclamat = document.getElementById('NUME_RECLAMAT').value.trim();
-    const callSign = document.getElementById('CALL_SIGN').value.trim();
-    const phone = document.getElementById('NUMAR_DE_TEL').value.trim();
-    const incidentDate = document.getElementById('DATA').value.trim();
-    const discordName = document.getElementById('EMAIL').value.trim();
-    const proof = document.getElementById('DETALII').value.trim();
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+        event.preventDefault();
 
-    const webhookUrl = "https://discordapp.com/api/webhooks/1345077126126370857/VP528Ai1ZeF_p2Dya6tbiF9lDE0BMoxo2d4nw_5ewkz8YCVHQk_82_H4-YSgwEeOkcIA";
+        // Preluăm datele din formular
+        const name = document.getElementById('NUME').value.trim();
+        const cnp = document.getElementById('ID').value.trim();
+        const medicReclamat = document.getElementById('NUME_RECLAMAT').value.trim();
+        const callSign = document.getElementById('CALL_SIGN').value.trim();
+        const phone = document.getElementById('NUMAR_DE_TEL').value.trim();
+        const incidentDate = document.getElementById('DATA').value.trim();
+        const discordName = document.getElementById('EMAIL').value.trim();
+        const proof = document.getElementById('DETALII').value.trim();
 
-    const payload = {
-        content: `:warning: **Cerere Audiență** :warning: \n
-            **1) Nume:** ${name}\n
-            **2) CNP:** ${cnp}\n
-            **3) Numele medicului reclamat:** ${medicReclamat}\n
-            **4) Call Sign Medic:** ${callSign}\n
-            **5) Număr de telefon:** ${phone}\n
-            **6) Discord:** ${discordName}\n
-            **7) Data incidentului:** ${incidentDate}\n
-            **8) Dovada:** ${proof}`
-    };
+        const webhookUrl = "https://discordapp.com/api/webhooks/1345077126126370857/VP528Ai1ZeF_p2Dya6tbiF9lDE0BMoxo2d4nw_5ewkz8YCVHQk_82_H4-YSgwEeOkcIA";
 
-    fetch(webhookUrl, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-    })
-    .then(response => {
-        if (response.ok) {
-            document.getElementById('responseMessage').innerText = `Mulțumim, ${name}! Cererea Dvs a fost inregistrata, un membru al Conducerii se v-a ocupa.`;
-            document.getElementById('contactForm').reset();
-        } else {
+        const payload = {
+            content: `:warning: **Cerere Audiență** :warning: \n
+                **1) Nume:** ${name}\n
+                **2) CNP:** ${cnp}\n
+                **3) Numele medicului reclamat:** ${medicReclamat}\n
+                **4) Call Sign Medic:** ${callSign}\n
+                **5) Număr de telefon:** ${phone}\n
+                **6) Discord:** ${discordName}\n
+                **7) Data incidentului:** ${incidentDate}\n
+                **8) Dovada:** ${proof}`
+        };
+
+        fetch(webhookUrl, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+        })
+        .then(response => {
+            if (response.ok) {
+                document.getElementById('responseMessage').innerText = `Mulțumim, ${name}! Cererea Dvs a fost inregistrata, un membru al Conducerii se v-a ocupa.`;
+                document.getElementById('contactForm').reset();
+            } else {
+                document.getElementById('responseMessage').innerText = "Eroare la trimiterea mesajului. Te rugăm să încerci din nou.";
+            }
+        })
+        .catch(error => {
+            console.error("Eroare la trimiterea datelor către Discord:", error);
             document.getElementById('responseMessage').innerText = "Eroare la trimiterea mesajului. Te rugăm să încerci din nou.";
-        }
-    })
-    .catch(error => {
-        console.error("Eroare la trimiterea datelor către Discord:", error);
-        document.getElementById('responseMessage').innerText = "Eroare la trimiterea mesajului. Te rugăm să încerci din nou.";
+        });
     });
-}
-
-class MediumImage extends HTMLElement {
+    class MediumImage extends HTMLElement {
     constructor() {
         super();
 
