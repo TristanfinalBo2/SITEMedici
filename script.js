@@ -109,7 +109,6 @@ function formatPhoneNumber(inputId) {
 
 window.addEventListener("load", (event) => {
     formatPhoneNumber('NUMAR_DE_TEL');
-formatPhoneNumber('CONTACT');
 
   });
   
