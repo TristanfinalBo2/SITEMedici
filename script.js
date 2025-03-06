@@ -107,9 +107,12 @@ function formatPhoneNumber(inputId) {
     });
 }
 
-formatPhoneNumber('NUMAR_DE_TEL');
+window.addEventListener("load", (event) => {
+    formatPhoneNumber('NUMAR_DE_TEL');
 formatPhoneNumber('CONTACT');
 
+  });
+  
 
     document.getElementById('contactForm').addEventListener('submit', function(event) {
         event.preventDefault();
