@@ -129,15 +129,7 @@ window.addEventListener("load", (event) => {
         const webhookUrl = "https://discordapp.com/api/webhooks/1345077126126370857/VP528Ai1ZeF_p2Dya6tbiF9lDE0BMoxo2d4nw_5ewkz8YCVHQk_82_H4-YSgwEeOkcIA";
 
         const payload = {
-            content: `:warning: **Cerere Audiență** :warning: \n
-**1) Nume:** ${name}\n
-**2) CNP:** ${cnp}\n
-**3) Numele medicului reclamat:** ${medicReclamat}\n
-**4) Call Sign Medic:** ${callSign}\n
-**5) Număr de telefon:** ${phone}\n
-**6) Discord:** ${discordName}\n
-**7) Data incidentului:** ${incidentDate}\n
-**8) Dovada:** ${proof}`
+            content: `:warning: **Cerere Audiență** :warning:\n**1) Nume:** ${name}\n**2) CNP:** ${cnp}\n**3) Numele medicului reclamat:** ${medicReclamat}\n**4) Call Sign Medic:** ${callSign}\n**5) Număr de telefon:** ${phone}\n**6) Discord:** ${discordName}\n**7) Data incidentului:** ${incidentDate}\n**8) Dovada:** ${proof}`
         };
 
         fetch(webhookUrl, {
