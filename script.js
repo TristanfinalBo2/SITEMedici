@@ -20,7 +20,7 @@ function fetchData() {
                         <div class="pozaSpital w-full h-[60%] relative border-b border-zinc-600 dark:border-zinc-700">
                             <img src="./${item.imagine}.png" alt="Image" class="mt-0 w-full h-full rounded-md">
                             <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black via-transparent to-transparent p-4">
-                                <h3 class="text-white text-xl font-bold">Relatii Publice</h3>
+                                <h3 class="text-white text-xl font-bold">Relații Publice</h3>
                             </div>
                         </div>
                         <div class="p-6 border-b border-zinc-600 dark:border-zinc-700">
