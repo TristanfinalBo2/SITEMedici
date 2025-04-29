@@ -681,7 +681,7 @@ nav.nav-menu a.active::before {
             opacity: 90%;
             font-weight: 500;
             margin-top: 20px;
-            transform: translateX(140%);
+            transform: translateX(0%);
         }
 
         .action-button:hover {
@@ -886,6 +886,7 @@ h4{
 
 .sub-department-container {
     display: flex;
+    flex-direction: row !important;
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 30px;
@@ -1012,6 +1013,24 @@ h4{
 .isuls.yellow {
     border-left: 4px solid #333;  /* Border galben pentru ISULS */
 }
+
+/* PR */
+.pr {
+    background-color: #470197;
+}
+.pr.blue {
+    border-left: 4px solid #333;
+}
+.pr.yellow {
+    border-left: 4px solid #333;
+}
+
+.sub-department-container.pr-container {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 #conducerea-spitalului span{
     width: 100%;
     color: white;
@@ -1209,6 +1228,31 @@ h4{
             font-size: 14px;
             color: green;
         }
+
+    /* STIU EU DE ASTA */
+        .image-side {
+        width: 140px;
+        height: 140px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .image-side img {
+        width: 140px;
+        height: 140px;
+        object-fit: contain;
+        align-items: center;
+    }
+
+    .left-side {
+        transform: translateX(70px);
+    }
+
+    .right-side {
+        transform: translateX(-70px);
+    }
+
     </style>
 </head>
 <body>        
@@ -1494,8 +1538,36 @@ h4{
                             <p class="rank"><small>Contact: </small>@sebytm | Mobil: 179-8703</p>
                         </div>
                     </div>
-                    <a href="https://programari-pcls.vercel.app/" class="action-button">Creează o Programare</a>
                 </div>
+
+                    <!-- PR BOX + imaginile laterale -->
+                    <span>Relații Publice Los Santos</span>
+                    <div class="sub-department-container">
+                        <div class="image-side left-side">
+                            <img src="img_pr.png" alt="PR Logo Stânga" />
+                        </div>
+
+                        <div class="sub-department pr blue">
+                            <div class="image-box">
+                                <img src="img_bale2.png" alt="Ion Popescu">
+                            </div>
+                            <div class="sub-department-details">
+                                <h4>Nica Madalin</h4>
+                                <p class="role">Șef Relații Publice</p>
+                                <p class="rank"><small>Contact: </small>@madalin7681 | Mobil: 000-1134 </p>
+                            </div>
+                        </div>
+
+                        <div class="image-side right-side">
+                            <img src="img_pr.png" alt="PR Logo Dreapta" />
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="https://programari-pcls.vercel.app/" class="action-button">
+                            Creează o Programare
+                        </a>
+                    </div>
             </section>
             
             <button class="collapsible">Cerere Audiență</button>
@@ -1531,12 +1603,6 @@ h4{
                 <div id="responseMessage"></div>
             </section>
         </div>
-        <button class="collapsible second">Cerere Eveniment</button>
-        <div class="content2">
-            <section id="contactevent">
-                <span style="color: white; font-size: 1.2vw">Pentru programarea evenimentelor vă rugam sa îl contactați pe Nica Madalin. Tel: 000-1134. Email: @madalin7681</span>
-            </section>
-            </div>
               
             </section> 
             <section id="extra" style="margin-top: 100px;">
