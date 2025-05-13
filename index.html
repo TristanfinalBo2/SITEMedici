@@ -1511,6 +1511,32 @@ h4{
 .tree-item:hover .content .rank {
     opacity: 1; /* Afișează la hover */
 }
+@media (max-width: 768px) {
+  .tree {
+    gap: 10px;
+    width: 100vw;
+    padding: 0 2vw;
+  }
+  .tree-level {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+  .tree-item {
+    width: 95vw !important;
+    max-width: 320px;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 10px 4px;
+    font-size: 0.95em;
+    height: auto;
+  }
+  .tree-item .imgBx img {
+    width: 60px !important;
+    height: 60px !important;
+  }
+}
 
 
 
