@@ -1537,7 +1537,13 @@ h4{
     height: 60px !important;
   }
 }
-
+@keyframes pulse-slow {
+  0%, 100% { box-shadow: 0 0 40px 8px #ff4d4d99, 0 8px 32px 0 rgba(0,0,0,0.7);}
+  50% { box-shadow: 0 0 60px 16px #ff0000cc, 0 8px 32px 0 rgba(0,0,0,0.7);}
+}
+.animate-pulse-slow {
+  animation: pulse-slow 2.5s infinite;
+}
 
 
 
@@ -1577,6 +1583,7 @@ h4{
             <a href="#services" style="--clr:#ff4d4d; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Sub-Departamente</a>
             <a href="#contact" style="--clr:#ff4d4d; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;" >Cerere Audiență</a>
             <a href="#extra" style="--clr:#ff4d4d; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Informații</a>
+            <a href="#reintegrare" style="--clr:#ff4d4d; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">Criterii Reintegrare/Transfer</a>
         </nav></center>
     </header>
     <h2 style="color: transparent; font-size: 50px;">iasa</h2>
@@ -1964,6 +1971,45 @@ h4{
                         <p class="text-white leading-relaxed"><strong>Prezență:</strong> Activitatea regulată e obligatorie pentru a rămâne în departament.</p>
                       </div>
                     </div>
+                    </section>
+                    <section id="reintegrare" style="margin-bottom: 60px; background: rgba(128, 128, 128, 0.5); width: 0%; box-shadow: 0 0 0 0; padding: 0px;"></section>
+  <div class="mt-12 flex justify-center">
+    <div
+      style="border-radius: 30px; max-width: 950px; width: 100%; box-shadow: 0 0 40px 8px #ff4d4d99, 0 8px 32px 0 rgba(0,0,0,0.7); border: 3px solid #ff4d4d; background: rgba(30,30,30,0.7); position: relative; overflow: hidden;"
+      class="p-1 shadow-2xl"
+    >
+      <div class="bg-white/10 backdrop-blur-xl border border-white/20 p-7 flex flex-col gap-6" style="border-radius: 27px;">
+        <h2 class="text-3xl font-extrabold text-white text-center mb-4 tracking-wide flex items-center justify-center gap-2" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-shadow: 0 0 18px #ff4d4d, 0 0 8px #fff;">
+          <span style="font-size: 2.2rem; filter: drop-shadow(0 0 8px #fff);">🩺</span>
+          Criterii pentru Intrare în Departament
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Reintegrare -->
+          <div style="background: linear-gradient(120deg, #ff4d4d 60%, #8e0c0c 100%); border-radius: 22px; box-shadow: 0 0 24px 4px #ff4d4d99; padding: 24px 18px;">
+            <h3 class="text-lg font-bold text-white mb-2" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-shadow: 0 0 8px #fff;">Reintegrare</h3>
+            <ul class="text-white text-base space-y-2" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+              <li><span style="color:#fff700;font-weight:bold;">•</span> Fost grad de <b>200</b> și <b>300</b> reintră ca și <b>400</b>, au dreptul la reintegrare până la <b>4 luni</b> de la DEMISIE.</li>
+              <li><span style="color:#fff700;font-weight:bold;">•</span> Fost grad de <b>100</b> reintră ca și <b>300</b>, au dreptul la reintegrare până la <b>4 luni</b> de la DEMISIE.</li>
+              <li><span style="color:#fff700;font-weight:bold;">•</span> Fostele grade de <b>CONDUCERE</b> vor fi reintegrați ca și <b>200</b>, pot beneficia de reintegrare în maxim <b>2 luni</b>.</li>
+              <li><span style="color:#fff700;font-weight:bold;">•</span> O singură dată și se pot reintegra și după 2 luni, dar cu beneficiile gradelor de <b>300</b>.</li>
+              <li><span style="color:#fff700;font-weight:bold;">•</span> Cei care vin prin reintegrare au obligația de a obține toate certificatele în prima zi.</li>
+            </ul>
+          </div>
+          <!-- Transfer -->
+          <div style="background: linear-gradient(120deg, #2563eb 60%, #0a1a3a 100%); border-radius: 22px; box-shadow: 0 0 24px 4px #2563eb99; padding: 24px 18px;">
+            <h3 class="text-lg font-bold text-white mb-2" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-shadow: 0 0 8px #fff;">Transfer</h3>
+            <ul class="text-white text-base space-y-2" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+              <li><span style="color:#fff700;font-weight:bold;">•</span> <b>Agent Paza+ [AGP+]</b> - va primi în urma transferului gradul de <b>ASISTENT MEDICAL</b>.</li>
+              <li><span style="color:#fff700;font-weight:bold;">•</span> <b>Cadet [CD]</b> - va primi în urma transferului gradul de <b>ASISTENT MEDICAL</b>.</li>
+              <li><span style="color:#fff700;font-weight:bold;">•</span> <b>Agent [AG]</b> - va primi în urma transferului gradul de <b>MEDIC STAGIAR</b>.</li>
+              <li><span style="color:#fff700;font-weight:bold;">•</span> <b>Agent Principal+ [AP+]</b> - va primi în urma transferului gradul de <b>MEDIC REZIDENT</b>.</li>
+              <li><span style="color:#fff700;font-weight:bold;">•</span> Gradele <b>CONDUCERII IPJ</b> - vor primi în urma transferului gradul de <b>MEDIC REZIDENT</b> + AVANSARE MAI RAPIDĂ.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
                   
                     <div class="mt-12 flex flex-wrap gap-8 items-center justify-center">
                       <img src="./logospital.png" class="w-32 h-32 object-contain" alt="logo stanga" />
@@ -1971,10 +2017,6 @@ h4{
                       <img src="./image_fpt.png" class="w-24 h-24 object-contain" alt="logo dreapta" />
                     </div>
                   </section>
-                  
-                  
-                  
-
         </div>
             <div class="footer-content">
                 <footer>
