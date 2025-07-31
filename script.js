@@ -132,7 +132,7 @@ window.addEventListener("load", (event) => {
         })
         .then(response => {
             if (response.ok) {
-                document.getElementById('responseMessage').innerText = `Mulțumim, ${name}! Cererea Dvs a fost inregistrata, un membru al Conducerii se v-a ocupa.`;
+                document.getElementById('responseMessage').innerText = `Mulțumim, ${name}! Cererea Dvs a fost inregistrata, un membru al Conducerii se va ocupa.`;
                 document.getElementById('contactForm').reset();
             } else {
                 document.getElementById('responseMessage').innerText = "Eroare la trimiterea mesajului. Te rugăm să încerci din nou.";
