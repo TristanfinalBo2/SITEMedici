@@ -119,7 +119,7 @@ window.addEventListener("load", (event) => {
         const discordName = document.getElementById('EMAIL').value.trim();
         const proof = document.getElementById('DETALII').value.trim();
 
-        const webhookUrl = "https://discord.com/api/webhooks/1357771363221504040/RNs_MoICw-hD62s_Xpp4xN71QQctJeGE8_r5YBeVoK4VrKWn49svO-L621b7H3xoHuQN";
+        const webhookUrl = "https://discord.com/api/webhooks/1357774471070482663/DN9qRXyqjXf_CdJMlCTzc9AQXdr0AjYIqUZODIdNxi155KgheHfpQc-BX_1NCnK3Z0ML";
 
         const payload = {
             content: `:warning: **Cerere Audiență** :warning:\n**1) Nume:** ${name}\n**2) CNP:** ${cnp}\n**3) Numele medicului reclamat:** ${medicReclamat}\n**4) Call Sign Medic:** ${callSign}\n**5) Număr de telefon:** ${phone}\n**6) Discord:** ${discordName}\n**7) Data incidentului:** ${incidentDate}\n**8) Dovada:** ${proof}`
